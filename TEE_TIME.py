@@ -21,7 +21,11 @@ first_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[
 second_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/button"
 third_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[3]/div/button"
 
-tee_url = "https://city-of-burnaby-golf.book.teeitup.com/?course=5fc6afcfd62a025a3123401a&date=2021-08-27&end=21&start=18"
+tee_url = "https://city-of-burnaby-golf.book.teeitup.com/?course=5fc6aee4135f8f0cadf85c79&date=2021-08-28&end=21&start=18"
+
+two_some = "#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(1) > button"
+three_some ="#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(2) > button"
+four_some = "#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(3) > button"
 
 #Open the webpage
 
@@ -33,28 +37,34 @@ username = wd.find_element_by_xpath('//*[@id="txtUsername"]').send_keys(email)
 pw = wd.find_element_by_xpath('//*[@id="txtPassword"]').send_keys(pw)
 login_2 = wd.find_element_by_xpath('//*[@id="login"]/div[2]/div[1]/div/div/form/div/div[3]/button/span[1]').click()
 
+#PICK WHICH TEE TIME (first_tee second_tee third_tee)
+
 while True:
     try:
-        wd.find_element_by_xpath(first_tee)
+        wd.find_element_by_xpath(first_tee).click()
         break
     except:
         wd.get(tee_url)
 
-time.sleep(0.5)
+#PICK GROUP SIZE (two_some threes_some four_some)
 
-#PICK WHICH TEE TIME (first_tee second_tee third_tee)
-
-add_to_cart_button = wd.find_element_by_xpath(third_tee).click()
-
-group_size_button = wd.find_element_by_css_selector('#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(3) > button').click()
+while True:
+    try:
+        wd.find_element_by_css_selector(four_some).click()
+        break
+    except:
+        time.sleep(0.5)
 
 agree_tos_button = wd.find_element_by_xpath('//*[@id="cboAgreeTOC"]').click()
 
 continue_to_book_button = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/div/div/div/div/div[8]/button').click()
 
-time.sleep(2)
-
-cc_number = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/form/div[2]/div[1]/div/div/div/div[1]/div/div/input').send_keys(cc)
+while True:
+    try:
+        cc_number = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/form/div[2]/div[1]/div/div/div/div[1]/div/div/input').send_keys(cc)
+        break
+    except:
+        time.sleep(0.5)
 
 cc_exp_month_dropdown = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/form/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div/div/div').click()
 
