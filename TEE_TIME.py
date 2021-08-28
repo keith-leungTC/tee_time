@@ -6,10 +6,10 @@ import chromedriver_binary
 import time
 import datetime
 
-print('Put in the start time in 24 hour:')
+print('Put in the start time in 24 hour format (include leading zeroes) ie. 09:')
 start_time = input()
 
-print('Put in the end time in 24 hour format:')
+print('Put in the end time in 24 hour format (include leading zeroes) ie. 18:')
 end_time = input()
 
 print('Which course? 1 for Burnaby. 2 for Riverway: ')
