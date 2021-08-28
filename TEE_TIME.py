@@ -6,6 +6,22 @@ import chromedriver_binary
 import time
 import datetime
 
+print('Put in the start time in 24 hour:')
+start_time = input()
+
+print('Put in the end time in 24 hour format:')
+end_time = input()
+
+print('Which course? 1 for Burnaby. 2 for Riverway: ')
+
+course_select = input()
+
+if course_select == '1':
+    course_select = "5fc6aee4135f8f0cadf85c79&"
+
+if course_select == '2':
+    course_select = "5fc6afcfd62a025a3123401a&"
+
 wd = wd.Chrome()
 wd.implicitly_wait(10)
 
