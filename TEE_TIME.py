@@ -6,14 +6,26 @@ import chromedriver_binary
 import time
 import datetime
 
+print('Please put in date in this format YYYY-MM-DD:')
+play_date = input()
+
 print('Put in the start time in 24 hour format (include leading zeroes) ie. 09:')
 start_time = input()
 
-print('Put in the end time in 24 hour format (include leading zeroes) ie. 18:')
+print('Put in the end time in 24 hour format (include leading zeroes) ie. 09:')
 end_time = input()
 
-print('Which course? 1 for Burnaby. 2 for Riverway: ')
+print('Which tee time? 1, 2, 3')
+tee_time = input()
 
+if tee_time == '1':
+    tee_time = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[1]/div/button"
+if tee_time == '2':
+    tee_time = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/button"
+if tee_time == '3':
+    tee_time = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[3]/div/button"
+
+print('Which course? 1 for Burnaby. 2 for Riverway: ')
 course_select = input()
 
 if course_select == '1':
@@ -22,17 +34,45 @@ if course_select == '1':
 if course_select == '2':
     course_select = "5fc6afcfd62a025a3123401a&"
 
+print('How many players would you like to book for?')
+players = input()
+
+if players == '2':
+    players = "#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(1) > button"
+if players == '3':
+    players = "#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(2) > button"
+if players == '4':
+    players = "#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(3) > button"
+
+print('Please put in your email:')
+email = input()
+
+print('Please put in your password:')
+pw = input()
+
+print('Please put in your CC number:')
+cc = input()
+
+print('Please put in your cvv:')
+cvv = input()
+
+print('Please put in your address: ')
+address = input()
+
+print('Please put in your postal code: ')
+postal_code = input()
+
 wd = wd.Chrome()
 wd.implicitly_wait(10)
 
-#VARIABLES
+# TESTING VARIABLES
 
-email = "xxxxx"
-pw = "xxxxxx"
-cc = "1234123412341234"
-cvv = "123"
-address = "xxxxx"
-postal_code = "xxxxx"
+#email = "xxx"
+#pw = "xxxxx"
+#cc = "1234123412341234"
+#cvv = "123"
+#address = "xxxxx"
+#postal_code = "V5C 0K2"
 
 first_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[1]/div/button"
 second_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/button"
