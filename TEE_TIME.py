@@ -4,6 +4,7 @@
 from selenium import webdriver as wd
 import chromedriver_binary
 import time
+import datetime
 
 wd = wd.Chrome()
 wd.implicitly_wait(10)
@@ -21,7 +22,7 @@ first_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[
 second_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/button"
 third_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[3]/div/button"
 
-tee_url = "https://city-of-burnaby-golf.book.teeitup.com/?course=5fc6aee4135f8f0cadf85c79&date=2021-08-28&end=21&start=18"
+tee_url = "https://city-of-burnaby-golf.book.teeitup.com/?course=5fc6afcfd62a025a3123401a&date=2021-08-30&golfers=4"
 
 two_some = "#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(1) > button"
 three_some ="#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(2) > button"
@@ -37,11 +38,21 @@ username = wd.find_element_by_xpath('//*[@id="txtUsername"]').send_keys(email)
 pw = wd.find_element_by_xpath('//*[@id="txtPassword"]').send_keys(pw)
 login_2 = wd.find_element_by_xpath('//*[@id="login"]/div[2]/div[1]/div/div/form/div/div[3]/button/span[1]').click()
 
+#Wait until [HH, MM, SS]
+
+while True:
+    now = datetime.datetime.now()
+    current_time = [now.hour, now.minute, now.second]
+    if current_time == [6, 0, 0]:
+        break
+    else:
+        time.sleep(0.5)
+    
 #PICK WHICH TEE TIME (first_tee second_tee third_tee)
 
 while True:
     try:
-        wd.find_element_by_xpath(first_tee).click()
+        wd.find_element_by_xpath(second_tee).click()
         break
     except:
         wd.get(tee_url)
