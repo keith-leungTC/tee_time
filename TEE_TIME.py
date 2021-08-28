@@ -74,15 +74,15 @@ wd.implicitly_wait(10)
 #address = "xxxxx"
 #postal_code = "V5C 0K2"
 
-first_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[1]/div/button"
-second_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/button"
-third_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[3]/div/button"
+#first_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[1]/div/button"
+#second_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/button"
+#third_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[3]/div/button"
 
 tee_url = "https://city-of-burnaby-golf.book.teeitup.com/?course=5fc6afcfd62a025a3123401a&date=2021-08-30&golfers=4"
 
-two_some = "#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(1) > button"
-three_some ="#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(2) > button"
-four_some = "#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(3) > button"
+#two_some = "#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(1) > button"
+#three_some ="#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(2) > button"
+#four_some = "#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(3) > button"
 
 #Open the webpage
 
@@ -108,7 +108,7 @@ while True:
 
 while True:
     try:
-        wd.find_element_by_xpath(second_tee).click()
+        wd.find_element_by_xpath(tee_time).click()
         break
     except:
         wd.get(tee_url)
@@ -117,7 +117,7 @@ while True:
 
 while True:
     try:
-        wd.find_element_by_css_selector(four_some).click()
+        wd.find_element_by_css_selector(players).click()
         break
     except:
         time.sleep(0.5)
