@@ -2,9 +2,7 @@
 # coding: utf-8
 
 from selenium import webdriver as wd
-import chromedriver_binary
-import time
-import datetime
+import chromedriver_binary, time, datetime
 
 print('Please put in date in this format YYYY-MM-DD:')
 play_date = input()
