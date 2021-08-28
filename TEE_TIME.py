@@ -76,7 +76,7 @@ wd.implicitly_wait(10)
 #second_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/button"
 #third_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[3]/div/button"
 
-tee_url = "https://city-of-burnaby-golf.book.teeitup.com/?course=5fc6afcfd62a025a3123401a&date=2021-08-30&golfers=4"
+tee_url = "https://city-of-burnaby-golf.book.teeitup.com/?course={}&date={}&end={}&start={}".format(course_select, play_date, end_time, start_time)
 
 #two_some = "#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(1) > button"
 #three_some ="#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(2) > button"
