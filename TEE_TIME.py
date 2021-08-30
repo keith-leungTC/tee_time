@@ -70,7 +70,7 @@ wd.implicitly_wait(10)
 #cc = "1234123412341234"
 #cvv = "123"
 #address = "xxxxx"
-#postal_code = "V5C 0K2"
+#postal_code = "xxx xxx"
 
 #first_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[1]/div/button"
 #second_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/button"
