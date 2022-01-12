@@ -78,9 +78,9 @@ wd.implicitly_wait(10)
 
 tee_url = "https://city-of-burnaby-golf.book.teeitup.com/?course={}&date={}&end={}&start={}".format(course_select, play_date, end_time, start_time)
 
-#two_some = "#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(1) > button"
-#three_some ="#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(2) > button"
-#four_some = "#app-container > div > div.jss3 > div > div > div > div > div:nth-child(3) > div > div:nth-child(3) > button"
+#two_some = "#app-body > div.jss16.jss18.jss19 > div.jss1750.jss1776.jss1751.jss21.jss22.jss1737.jss25.jss27 > div.jss1778 > div:nth-child(2) > div:nth-child(1) > div > div > div > div:nth-child(1) > button"
+#three_some ="#app-body > div.jss16.jss18.jss19 > div.jss1750.jss1776.jss1751.jss21.jss22.jss1737.jss25.jss27 > div.jss1778 > div:nth-child(2) > div:nth-child(1) > div > div > div > div:nth-child(2) > button"
+#four_some = "#app-body > div.jss16.jss18.jss19 > div.jss1750.jss1776.jss1751.jss21.jss22.jss1737.jss25.jss27 > div.jss1778 > div:nth-child(2) > div:nth-child(1) > div > div > div > div:nth-child(3) > button"
 
 #Open the webpage
 
@@ -120,35 +120,35 @@ while True:
     except:
         time.sleep(0.5)
 
-agree_tos_button = wd.find_element_by_xpath('//*[@id="cboAgreeTOC"]').click()
-
-continue_to_book_button = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/div/div/div/div/div[8]/button').click()
+continue_to_book_button = wd.find_element_by_xpath('//*[@id="app-body"]/div[2]/div[2]/div[3]/div/button[1]').click()
 
 while True:
     try:
-        cc_number = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/form/div[2]/div[1]/div/div/div/div[1]/div/div/input').send_keys(cc)
-        break
+        cc_number = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/div[2]/div/div/div/div[1]/div/div[1]/div/div[1]/div/div/input').send_keys(cc)
+        break                                   
     except:
         time.sleep(0.5)
 
-cc_exp_month_dropdown = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/form/div[2]/div[1]/div/div/div/div[2]/div[1]/div/div/div/div').click()
-time.sleep(0.5)
+cc_exp_month_dropdown = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/div[2]/div/div/div/div[1]/div/div[1]/div/div[2]/div[1]/div/div/div/div').click()
+time.sleep(0.5)                                   
 cc_exp_month_select = wd.find_element_by_xpath('//*[@id="menu-Payment.CC.ExpirationMonth"]/div[2]/ul/li[6]').click()
 
-cc_exp_year_dropdown = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/form/div[2]/div[1]/div/div/div/div[2]/div[2]/div/div/div/div').click()
+cc_exp_year_dropdown = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/div[2]/div/div/div/div[1]/div/div[1]/div/div[2]/div[2]/div/div/div/div').click()
 time.sleep(0.5)
 cc_exp_year_select = wd.find_element_by_xpath('//*[@id="menu-Payment.CC.ExpirationYear"]/div[2]/ul/li[6]').click()
 
 time.sleep(.5)
 
-cc_cvv = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/form/div[2]/div[1]/div/div/div/div[2]/div[3]/div/div/div/input').send_keys(cvv)
+cc_cvv = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/div[2]/div/div/div/div[1]/div/div[1]/div/div[2]/div[3]/div/div/div/input').send_keys(cvv)
 
-cc_address = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/form/div[2]/div[1]/div/div/div/div[4]/div/input').send_keys(address)
+cc_address = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/div[2]/div/div/div/div[1]/div/div[1]/div/div[4]/div/input').send_keys(address)
 
-cc_postal = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/form/div[2]/div[1]/div/div/div/div[5]/div[1]/div/input').send_keys(postal_code)
+cc_postal = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/div[2]/div/div/div/div[1]/div/div[1]/div/div[5]/div[1]/div/input').send_keys(postal_code)
 
-cc_country = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/form/div[2]/div[1]/div/div/div/div[5]/div[2]/div/div/div').click()
+cc_country = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/div[2]/div/div/div/div[1]/div/div[1]/div/div[5]/div[2]/div/div/div').click()
 
 cc_country_select = wd.find_element_by_xpath('//*[@id="menu-Payment.Address.Country"]/div[2]/ul/li[3]').click()
 
-make_reservation_button = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/form/div[2]/div[2]/div[8]/button').click()
+agree_toc = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/div[2]/div/div/div/div[2]/div[9]/label/span[1]/span[1]/input').click()
+
+make_reservation_button = wd.find_element_by_xpath('//*[@id="app-container"]/div/div[2]/div[2]/div/div/div/div[2]/div[11]/button').click()
