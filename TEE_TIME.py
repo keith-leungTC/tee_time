@@ -2,7 +2,8 @@
 # coding: utf-8
 
 from selenium import webdriver as wd
-import chromedriver_binary, time, datetime
+import time, datetime
+from webdriver_manager.chrome import ChromeDriverManager
 
 print('Please put in date in this format YYYY-MM-DD:')
 play_date = input()
@@ -60,17 +61,17 @@ address = input()
 print('Please put in your postal code: ')
 postal_code = input()
 
-wd = wd.Chrome()
+wd = wd.Chrome(ChromeDriverManager().install())
 wd.implicitly_wait(10)
 
 # TESTING VARIABLES
 
-#email = "xxx"
-#pw = "xxxxx"
-#cc = "1234123412341234"
-#cvv = "123"
-#address = "xxxxx"
-#postal_code = "xxx xxx"
+#email = "XXXXXXXXXXXXXX"
+#pw = "XXXXXXXX"
+#cc = "XXXXXXXXXXXXXXXXX"
+#cvv = "XXX"
+#address = "XXXXXXXXXXXXXXXX"
+#postal_code = "XXX XXX"
 
 #first_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[1]/div/button"
 #second_tee = "//*[@id=\"app-container\"]/div/div[2]/div/div[2]/div[2]/div[2]/div[2]/div/button"
