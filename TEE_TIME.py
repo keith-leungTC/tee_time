@@ -86,6 +86,7 @@ while True:
     now = datetime.datetime.now()
     current_time = [now.hour, now.minute, now.second]
     if current_time == [6, 0, 0]:
+        wd.get(tee_url)
         break
     else:
         time.sleep(0.5)
@@ -97,7 +98,7 @@ while True:
         wd.find_element_by_xpath(tee_time).click()
         break
     except:
-        wd.get(tee_url)
+        time.sleep(0.5)
 
 #PICK GROUP SIZE (two_some threes_some four_some)
 
