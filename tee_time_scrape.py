@@ -38,12 +38,14 @@ username = wd.find_element_by_xpath('//*[@id="txtUsername"]').send_keys(email)
 pw = wd.find_element_by_xpath('//*[@id="txtPassword"]').send_keys(pw)
 login_2 = wd.find_element_by_xpath('//*[@id="login"]/div[2]/div[1]/div/div/form/div/div[3]/button/span[1]').click()
 
+
 #Wait until [HH, MM, SS]
 
 #while True:
  #   now = datetime.datetime.now()
   #  current_time = [now.hour, now.minute, now.second]
    # if current_time == [6, 0, 0]:
+    #    wd.get(tee_url)
     #    break
     #else:
      #   time.sleep(0.5)
@@ -55,7 +57,7 @@ while True:
         wd.find_element_by_xpath(second_tee).click()
         break
     except:
-        wd.get(tee_url)
+        time.sleep(0.5)
 
 #PICK GROUP SIZE (two_some threes_some four_some)
 
